@@ -1,0 +1,9 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is unzipping...
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get install unzip
+      - run: unzip blockblastunblocked.github.io-main.zip -d main
