@@ -16,3 +16,4 @@ jobs:
           git add -A
           git commit -am "Automatic Sphinx build on $(date)"
           git push -f origin main
+
