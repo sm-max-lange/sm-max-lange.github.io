@@ -5,5 +5,14 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
       - run: sudo apt-get install unzip
       - run: unzip blockblastunblocked.github.io-main.zip -d main
+      - name: Commit files
+        run: |
+          git config --local user.name actions-user
+          git config --local user.email "actions@github.com"
+          git add -A
+          git commit -am "Automatic Sphinx build on $(date)"
+          git push -f origin main
